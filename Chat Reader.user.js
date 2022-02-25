@@ -9,7 +9,7 @@
 // @grant        none
 // ==/UserScript==
 
-var parseEventMoreShit = (d) => {
+var messageToElement = (d) => {
     let badges = d.sender.displayBadges.map(b => `<div class="InjectLayout-sc-588ddc-0 jFfYcJ"><button data-a-target="chat-badge"><img alt="${b.title}"
             aria-label="Значок «${b.title}»" class="chat-badge" src="${b.image1x}"
             srcset="${b.image1x} 1x, ${b.image2x} 2x, ${b.image4x} 4x"></button></div>`)
@@ -60,13 +60,13 @@ var parseEventMoreShit = (d) => {
                 var chatElement = document.querySelectorAll(`[data-a-target='chat-scroller']`)[0]
                 actualData.forEach(h => {
                     var asfd = document.createElement("div")
-                    asfd.innerHTML = parseEventMoreShit(h).trim()
+                    asfd.innerHTML = messageToElement(h).trim()
                     console.log(asfd.firstChild)
                     chatElement.lastChild.children[0].children[0].appendChild(asfd.firstChild)
                 })
                 var a = document.createElement("div")
                 a.className = "Layout-sc-nxg1ff-0 chat-line__status"
-                a.innerHTML = `<span class="CoreText-sc-cpl358-0">Предыдущие сообщения загружены!</span>`
+                a.innerHTML = `<span class="CoreText-sc-cpl358-0">${document.documentElement.lang == "ru-RU" ? "Предыдущие сообщения загружены!" : "Last messages loaded!"}</span>`
                 chatElement.lastChild.children[0].children[0].appendChild(a)
             })
         }
