@@ -61,7 +61,6 @@ var messageToElement = (d) => {
                 actualData.forEach(h => {
                     var asfd = document.createElement("div")
                     asfd.innerHTML = messageToElement(h).trim()
-                    console.log(asfd.firstChild)
                     chatElement.lastChild.children[0].children[0].appendChild(asfd.firstChild)
                 })
                 var a = document.createElement("div")
