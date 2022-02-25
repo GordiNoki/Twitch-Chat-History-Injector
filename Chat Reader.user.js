@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Chat Reader
-// @namespace    *://www.twitch.tv.*
+// @namespace    https://github.com/GordiNoki/Twitch-Chat-History-Injector
 // @version      0.1
 // @description  It's kinda working...
 // @author       GeN (https://github.com/GordiNoki)
